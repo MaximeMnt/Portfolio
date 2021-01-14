@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as io from "socket.io-client";
+//import * as io from "socket.io-client";
+import { io } from 'socket.io-client';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-homepage',
@@ -9,15 +11,22 @@ import * as io from "socket.io-client";
 export class HomepageComponent implements OnInit {
 
   public API_URL: string = 'http://localhost:5000';
-  public socket: SocketIOClient.Socket;
+  public socket;
   public mice = {};
+  private socketID:any;
 
   constructor() { this.socket = io.connect(this.API_URL); }
 
+  setupSocketConnection(){
+    this.socket = io(environment.SOCKET_ENDPOINT);
+  }
+
   ngOnInit() {
+    this.setupSocketConnection();
+
       this.socket.on('mousemove', (event) => {
         let mouse = this.mice[event.id];
-        if (!mouse) {
+        if (!mouse && event.id != this.socket.id) {
           const span = document.createElement('span');
           span.style.position = 'absolute';
           span.textContent = '🐊';
