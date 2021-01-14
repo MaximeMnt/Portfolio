@@ -10,15 +10,15 @@ import { environment } from 'src/environments/environment';
 })
 export class HomepageComponent implements OnInit {
 
-  public API_URL: string = 'http://localhost:5000';
+  public API_URL: string = 'https://api.maximemnt.synology.me/';
   public socket;
   public mice = {};
   private socketID:any;
 
-  constructor() { this.socket = io.connect(this.API_URL); }
+  constructor() { }
 
   setupSocketConnection(){
-    this.socket = io(environment.SOCKET_ENDPOINT);
+    this.socket = io(this.API_URL);
   }
 
   ngOnInit() {
