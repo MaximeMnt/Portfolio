@@ -3,6 +3,9 @@
 
 body{
     font-family: 'Sora', sans-serif;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 nav{
@@ -11,4 +14,7 @@ nav{
 
 .mlogo{
     margin-left: 1.5rem;
+}
+span  {
+    font-size: 2em;
 }

@@ -34,8 +34,10 @@ export class HomepageComponent implements OnInit {
           mouse = span;
           document.body.appendChild(span);
         }
-        mouse.style.top = event.y + 'px';
-        mouse.style.left = event.x + 'px';
+        if(event.id != this.socket.id){
+          mouse.style.top = event.y + 'px';
+          mouse.style.left = event.x + 'px';
+        }      
       });
 
       this.socket.on('message-client-disconnected', (id) => {
@@ -45,12 +47,17 @@ export class HomepageComponent implements OnInit {
         }
       });
 
-      document.addEventListener("mousemove", (event) => {
-        this.socket.emit('mousemove', {
-          x: event.clientX,
-          y: event.clientY
+      try {
+        document.addEventListener("mousemove", (event) => {
+          this.socket.emit('mousemove', {
+            x: event.clientX,
+            y: event.clientY
+          });
         });
-      });
+      } catch (error) {
+        console.error("mouse unavailable 😥");
+      }
+      
   }
 
 }
