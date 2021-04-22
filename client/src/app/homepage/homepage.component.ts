@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HomepageComponent implements OnInit {
 
-  public API_URL: string = 'https://api.maximemnt.synology.me/';
+  public API_URL: string = 'https://maximeminta-api.herokuapp.com/';
   public socket;
   public mice = {};
   private socketID:any;
