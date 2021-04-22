@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -14,7 +15,6 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(helmet());
 app.use(express.json());
-
 
 app.get('/', (req, res) => {
   res.json({
