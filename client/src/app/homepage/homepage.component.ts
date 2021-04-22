@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HomepageComponent implements OnInit {
 
-  public API_URL: string = 'https://maximeminta-api.herokuapp.com/';
+  public API_URL: string = 'https://discreet-spotty-grease.glitch.me/';
   public socket;
   public mice = {};
   private socketID:any;

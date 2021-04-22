@@ -1,5 +1,0 @@
-{
-    "name": "Portfolio API",
-    "description": "this app provides the websockets for the webapp.",
-    "image": "heroku/nodejs"
-}
