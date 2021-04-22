@@ -10,7 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
   declarations: [
     AppComponent,
     HomepageComponent,
-    ProjectsComponent
+    ProjectsComponent,
   ],
   imports: [
     BrowserModule,
