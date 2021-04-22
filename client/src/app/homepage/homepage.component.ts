@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-//import * as io from "socket.io-client";
 import { io } from 'socket.io-client';
 import { environment } from 'src/environments/environment';
 
@@ -10,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class HomepageComponent implements OnInit {
 
-  public API_URL: string = 'https://api.maximemnt.synology.me/';
+  public API_URL: string = 'localhost:5000';
   public socket;
   public mice = {};
   private socketID:any;
