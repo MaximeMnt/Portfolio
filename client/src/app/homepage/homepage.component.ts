@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+//import * as io from "socket.io-client";
 import { io } from 'socket.io-client';
 import { environment } from 'src/environments/environment';
 
@@ -9,11 +11,11 @@ import { environment } from 'src/environments/environment';
 })
 export class HomepageComponent implements OnInit {
 
-  public API_URL: string = 'localhost:5000';
+  public API_URL: string = 'https://discreet-spotty-grease.glitch.me/';
   public socket;
   public mice = {};
   private socketID:any;
-
+  public connectedUser: Observable<any>; 
   constructor() { }
 
   setupSocketConnection(){
@@ -22,7 +24,8 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.setupSocketConnection();
-
+      
+      
       this.socket.on('mousemove', (event) => {
         let mouse = this.mice[event.id];
         if (!mouse && event.id != this.socket.id) {

@@ -2,7 +2,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 body{
-    font-family: 'Sora', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     width: 100vw;
     height: 100vh;
@@ -17,4 +17,20 @@ nav{
 }
 span  {
     font-size: 2em;
+}
+
+a {
+    color: #90BE6D;
+}
+
+a:visited{
+    color: #90BE6D;
+}
+
+a:hover{
+    color: #F94144;
+}
+
+p {
+    font-size:medium;
 }
