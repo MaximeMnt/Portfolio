@@ -1,3 +1,13 @@
 .container{
     padding-top: 5rem;
 }
+@media (max-width:767px){
+    h2{
+        text-align: center;
+    }
+    
+    ul 
+    {
+        list-style-type: none;
+    }
+}
